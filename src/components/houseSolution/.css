@@ -1,0 +1,10 @@
+.clip-image {
+    overflow: hidden;
+}
+
+.clip-image img {
+    clip-path: inset(10px);
+    transform: scale(1.5);
+    height: calc(100vh - 60px);
+    object-fit: cover;
+}

@@ -1,14 +1,16 @@
 import { ReactLenis } from './utils/lenis'
 
-import Component1 from './components/component1'
-import Component2 from './components/component2'
+import Header from './components/header'
+import Headline from './components/headline'
+import HouseSolution from './components/houseSolution'
 import Component3 from './components/component3'
 
 function App() {
   return (
     <ReactLenis root>
-      <Component1 />
-      <Component2 />
+      <Header />
+      <Headline />
+      <HouseSolution />
       <Component3 />
     </ReactLenis>
   )
