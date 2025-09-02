@@ -1,10 +1,27 @@
-.clip-image {
+.houseSolution_item-container {
+    width: 100%;
+    height: 220px;
     overflow: hidden;
+    border-radius: 15px;
+    border: solid 1px rgba(255,255,255,0.5);
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
 }
 
-.clip-image img {
-    clip-path: inset(10px);
-    transform: scale(1.5);
-    height: calc(100vh - 60px);
+.houseSolution_item-img {
+    height: 100%;
     object-fit: cover;
+    transform: scale(1.8) translate(20%, -2%);
+    mask-image: linear-gradient( to right, rgba(0,0,0,0) 0%, black 15%, rgba(0,0,0,0) 100%);
+}
+
+.houseSolution_item-img-toilet {
+    transform: scale(1.8) translate(8%, 10%);
+}
+
+.houseSolution_item-text {
+    position: relative;
+    margin: auto;
+    text-align: right;
 }

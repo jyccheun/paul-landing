@@ -1,0 +1,12 @@
+.solarSolution_image-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.solarSolution_image-container img {
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
