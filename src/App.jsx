@@ -4,7 +4,8 @@ import Header from './components/header'
 import Headline from './components/headline'
 import HouseSolution from './components/houseSolution'
 import SolarSolution from './components/solarSolution'
-import Component3 from './components/component3'
+import BuildingSolution from './components/buildingSolution'
+import Footer from './components/footer'
 
 function App() {
   return (
@@ -13,7 +14,8 @@ function App() {
       <Headline />
       <HouseSolution />
       <SolarSolution />
-      <Component3 />
+      <BuildingSolution />
+      <Footer />
     </ReactLenis>
   )
 }

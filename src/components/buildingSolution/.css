@@ -1,0 +1,13 @@
+.buildingSolution_image-container {
+    position: relative;
+    /* overflow: hidden; */
+    display: flex;
+    flex-direction: row;
+    width: 300vw;
+}
+
+.buildingSolution_image-container img {
+    object-fit: cover;
+    /* width: 100vw; */
+    height: 100vh;
+}

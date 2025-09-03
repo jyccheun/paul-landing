@@ -1,5 +1,5 @@
 import React, { useRef } from 'react'
-import { motion } from 'motion/react'
+import { easeIn, motion } from 'motion/react'
 import './.css'
 
 import imgParking from '../../assets/parking-lot-2.png'
@@ -11,7 +11,12 @@ function SolarSolution() {
   const variants = {
     visible: {
       opacity: 1,
-      transition: { ease: 'easeOut', duration: 2, delay: 1 }
+      transition: { duration: 3 }
+    },
+    visibleText: {
+      y: -30,
+      opacity: 1,
+      transition: { duration: 3, y: { duration: 1.5, ease: 'easeOut' } }
     },
     hidden: {
       opacity: 0,
@@ -41,7 +46,7 @@ function SolarSolution() {
             className='absolute top-[25vh] z-10 w-full flex flex-col'
             variants={variants}
             initial="hidden"
-            whileInView="visible"
+            whileInView="visibleText"
             viewport={{ once: true }}
           >
             <div className='w-full max-w-[1280px] mx-auto text-white'>
@@ -53,10 +58,6 @@ function SolarSolution() {
             </div>
           </motion.div>
         </div>
-      </div>
-
-      <div className='text-5xl py-10 text-center leading-16'>
-        Because making use of your space<br />is important
       </div>
     </div>
   )

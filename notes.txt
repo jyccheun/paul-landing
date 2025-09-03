@@ -12,3 +12,6 @@
 1. solar carport (basically solar panels on raised roofs that are built on top of an existing parking lot (top floor of parking garage)
 10. solar panels on the roof
 9. BIPV on some section of building walls: see mitrex.com for renderings of how it looks
+
+ideas:
+scrolling collage
