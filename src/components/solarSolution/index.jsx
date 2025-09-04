@@ -38,7 +38,7 @@ function SolarSolution() {
               variants={variants}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true }}
+              // viewport={{ once: true }}
             />
           </div>
 
@@ -47,7 +47,7 @@ function SolarSolution() {
             variants={variants}
             initial="hidden"
             whileInView="visibleText"
-            viewport={{ once: true }}
+            // viewport={{ once: true }}
           >
             <div className='w-full max-w-[1280px] mx-auto text-white'>
               <div className='text-7xl ml-[-2px]'>Install solar car ports</div>

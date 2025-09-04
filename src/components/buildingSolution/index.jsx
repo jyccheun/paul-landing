@@ -20,25 +20,42 @@ function BuildingSolution() {
   //   restDelta: 0.001,
   // })
 
-  useMotionValueEvent(scrollYProgress, 'change', (latest) => {
-    console.log('x changed to', latest)
-  })
-
   return (
     <div className="bg-black w-full flex flex-col">
 
       <div className='w-full mx-auto h-[300vh] relative' ref={ref}>
         <div className='h-screen sticky top-0 flex overflow-hidden'>
           <motion.div className='buildingSolution_image-container' style={{ translateX }}>
-            <motion.img src={imgBipv} style={{ width }} />
-            <motion.img src={imgBipvColored} style={{ width }} />
-            <motion.img src={imgEifs} style={{ width }} />
+            <div className='w-[100vw] h-full relative overflow-hidden'>
+              <img src={imgBipv} />
+              <div className='absolute bottom-[25vh] left-0 right-0'>
+                <div className='text-center text-5xl buildingSolution_text-outline'>
+                  Building-integrated<br />photovoltaics (BIPV)
+                </div>
+              </div>
+            </div>
+            <div className='w-[100vw] h-full relative overflow-hidden'>
+              <img src={imgBipvColored} />
+              <div className='absolute bottom-[25vh] left-0 right-0'>
+                <div className='text-center text-5xl buildingSolution_text-outline'>
+                  Comes in an assortment of colors
+                </div>
+              </div>
+            </div>
+            <div className='w-[100vw] h-full relative overflow-hidden'>
+              <img src={imgEifs} />
+              <div className='absolute bottom-[25vh] left-0 right-0'>
+                <div className='text-center text-5xl buildingSolution_text-outline'>
+                  External Insulation<br />Finishing System (EIFS)
+                </div>
+              </div>
+            </div>
           </motion.div>
 
           <motion.div
             className='absolute top-[25vh] z-10 w-full flex flex-col'
           >
-            <div className='text-5xl py-10 text-center leading-16 text-white'>
+            <div className='text-4xl py-10 text-center leading-16 text-white'>
               Because making use of your space<br />is important
             </div>
           </motion.div>
