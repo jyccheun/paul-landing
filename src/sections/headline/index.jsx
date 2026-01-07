@@ -1,0 +1,45 @@
+import './.css'
+import { useRef } from 'react'
+import { useMotionTemplate, useScroll, motion, useTransform } from 'motion/react'
+
+import imgApartment from '../../assets/random-building-4-BXqrP7wt.png'
+
+function Headline() {
+
+  const ref = useRef()
+  const { scrollYProgress } = useScroll({ target: ref, offset: ['0 0', '1 0']})
+  const transformBackground = useTransform(scrollYProgress, [0, 1/3], ['100%', '0%'])
+  const scrollBackground = useMotionTemplate`linear-gradient(rgba(0, 0, 0, 0), rgb(0, 0, 0) ${transformBackground}, rgb(0, 0, 0))`
+  const transformFooter = useTransform(scrollYProgress, [2/3, 1], [1, 0])
+
+  return (
+    <div className="h-[200vh] flex flex-col" ref={ref}>
+      <div className="sticky top-0 h-screen">
+        <motion.div
+          className="headline_image-container"
+          style={{ background: scrollBackground }}
+        >
+          <img className="headline_image-apartment" src={imgApartment} />
+        </motion.div>
+      </div>
+      <div className="absolute bottom-0 z-10 w-full flex flex-col justify-center p-1">
+        <div className="mx-auto">
+          <div className="headline_sub-text">Modern Retrofit Solutions</div>
+          <div className="headline_main-text">
+            {('Upgrades of the Future.').split('').map((c, i) =>
+              <span key={i}>{c}</span>
+            )}
+          </div>
+        </div>
+      </div>
+      <motion.div
+        className="headline_footer"
+        style={{ opacity: transformFooter, translateY: transformFooter, scale: transformFooter }}
+      >
+        In dapibus purus nec nisl hendrerit aliquam. Aenean sit amet leo ut nisi molestie ultrices vel ac est. Donec augue felis, pulvinar a mi at, fringilla blandit enim.
+      </motion.div>
+    </div>
+  )
+}
+
+export default Headline

@@ -1,20 +1,24 @@
 import { ReactLenis } from './utils/lenis'
 
-import Header from './components/header'
-import Headline from './components/headline'
-import HouseSolution from './components/houseSolution'
-import SolarSolution from './components/solarSolution'
-import BuildingSolution from './components/buildingSolution'
-import Footer from './components/footer'
+import Header from './sections/header'
+import Headline from './sections/headline'
+import Introduction from './sections/introduction'
+import Outdoor from './sections/outdoor'
+import Solar from './sections/solar'
+import Washroom from './sections/washroom'
+import Video from './sections/video'
+import Footer from './sections/footer'
 
 function App() {
   return (
     <ReactLenis root>
       <Header />
       <Headline />
-      <HouseSolution />
-      <SolarSolution />
-      <BuildingSolution />
+      <Introduction />
+      <Outdoor />
+      <Solar />
+      <Washroom />
+      <Video />
       <Footer />
     </ReactLenis>
   )

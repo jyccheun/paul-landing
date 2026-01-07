@@ -1,0 +1,26 @@
+.solar_image-wrapper {
+    height: 75vh;
+    position: relative;
+    overflow: hidden
+}
+
+.solar_image-container {
+    height: 75vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden
+}
+
+.solar_image-container img {
+    object-fit: cover
+}
+
+.solar_text {
+    width: 89.5%;
+    margin: auto;
+    padding: 2.5vh 25vw 2.5vh 0;
+    color: #fff;
+    font-size: clamp(1rem,5vw,2rem);
+    line-height: clamp(1.25rem,5vw,2.5rem);
+    font-weight: 600
+}

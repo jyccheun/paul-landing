@@ -1,1 +1,10 @@
 @import 'tailwindcss';
+
+html * {
+    font-family: Nunito Sans, sans-serif !important;
+}
+
+#root {
+    background-color: #181a19;
+    font-size: 16px
+}

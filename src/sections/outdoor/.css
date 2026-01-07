@@ -1,0 +1,47 @@
+.outdoor_wrapper {
+    position: sticky;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden
+}
+
+.outdoor_slide {
+    position: relative;
+    overflow: hidden;
+    background-color: #000;
+    border-top: 1px rgba(255,255,255,.4) solid
+}
+
+.outdoor_slide-title {
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    padding: 0 3vw
+}
+
+.outdoor_slide-content {
+    background-color: #252826;
+    color: #fff
+}
+
+.outdoor_slide-image {
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    flex: 1;
+    border-top-left-radius: 1em
+}
+
+.outdoor_slide-image img {
+    object-fit: cover
+}
+
+.outdoor_slide-text {
+    flex: 1
+}
+
+.outdoor_slide-text div {
+    padding: 3vh 3vw
+}

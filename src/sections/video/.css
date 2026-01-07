@@ -1,0 +1,6 @@
+.video_container {
+    height: 90vh;
+    width: 160vh;
+    border-radius: .5em;
+    overflow: hidden
+}
