@@ -2,6 +2,7 @@ import './.css'
 import { useRef } from 'react'
 import { useMotionTemplate, useScroll, motion, useTransform } from 'motion/react'
 
+import texts from '../../texts'
 import imgApartment from '../../assets/random-building-4-BXqrP7wt.png'
 
 function Headline() {
@@ -24,9 +25,9 @@ function Headline() {
       </div>
       <div className="absolute bottom-0 z-10 w-full flex flex-col justify-center p-1">
         <div className="mx-auto">
-          <div className="headline_sub-text">Modern Retrofit Solutions</div>
+          <div className="headline_sub-text">{texts['headline-slogan-1']}</div>
           <div className="headline_main-text">
-            {('Upgrades of the Future.').split('').map((c, i) =>
+            {(texts['headline-slogan-2']).split('').map((c, i) =>
               <span key={i}>{c}</span>
             )}
           </div>
@@ -36,7 +37,7 @@ function Headline() {
         className="headline_footer"
         style={{ opacity: transformFooter, translateY: transformFooter, scale: transformFooter }}
       >
-        In dapibus purus nec nisl hendrerit aliquam. Aenean sit amet leo ut nisi molestie ultrices vel ac est. Donec augue felis, pulvinar a mi at, fringilla blandit enim.
+        {texts['headline-footer-1']}
       </motion.div>
     </div>
   )

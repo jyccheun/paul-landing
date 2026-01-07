@@ -3,6 +3,7 @@ import { useRef } from 'react'
 import { useScroll, motion, useTransform } from 'motion/react'
 import { useMediaQuery } from 'react-responsive'
 
+import texts from '../../texts'
 import img1 from '../../assets/random-building-3-BkkwaFFK.png'
 import img2 from '../../assets/building-solar-2-DJW7df3q.png'
 
@@ -93,40 +94,38 @@ function Introduction() {
   const text2Background = useTransform(scrollYProgress, animations.text2.background.in, animations.text2.background.out)
 
   return (
-    <div
-      ref={ref}
-      className="bg-[#181a19] relative z-10"
-      style={{ height: !isMobile ? '300vh' : '200vh', paddingBottom: !isMobile ? 0 : 0 }}
-    >
-      <div className="introduction_wrapper">
-        <motion.div
-          className="introduction_image-wrapper z-4 right-0"
-          style={{ width: img1Width, scale: img1Scale, opacity: img1Opacity, translateX: img1TranslateX }}
-        >
-          <img className="introduction_image" src={img1} style={{ height: !isMobile ? '100vh' : '50vh' }} />
-        </motion.div>
-        <motion.div
-          className="introduction_text bg-[#181a19] text-xl z-3 left-0 bottom-0"
-          style={{ height: text1Height, width: text1Width, opacity: text1Opacity, translateX: text1TranslateX }}
-        >
-          In dapibus purus nec nisl hendrerit aliquam. Aenean sit amet leo ut nisi molestie ultrices vel ac est. Donec augue felis, pulvinar a mi at, fringilla blandit enim.
-        </motion.div>
-        <motion.div
-          className="introduction_image-wrapper z-2 top-0 left-0"
-          style={{ width: img2Width, scale: img2Scale, opacity: img2Opacity }}
-        >
-          <img className="introduction_image" src={img2} style={{ height: !isMobile ? '100vh' : '50vh' }} />
-        </motion.div>
-        <motion.div
-          className="introduction_text text-xl right-0 bottom-0 z-1"
-          style={{ height: text2Height, width: text2Width, opacity: text2Opacity, translateY: text2TranslateY, backgroundColor: text2Background }}
-        >
-          <span
-            // style="opacity: 0;"
+    <div className='bg-[#181a19]' style={{ paddingBottom: !isMobile ? '50vh' : 0 }}>
+      <div
+        ref={ref}
+        className="relative z-10"
+        style={{ height: !isMobile ? '300vh' : '200vh', paddingBottom: !isMobile ? 0 : 0 }}
+      >
+        <div className="introduction_wrapper">
+          <motion.div
+            className="introduction_image-wrapper z-4 right-0"
+            style={{ width: img1Width, scale: img1Scale, opacity: img1Opacity, translateX: img1TranslateX }}
           >
-            Nulla eget eros pulvinar, scelerisque elit eu, dictum diam. Nam id diam vitae est porta mattis. Suspendisse iaculis elementum dolor, sed auctor nisi.
-          </span>
-        </motion.div>
+            <img className="introduction_image" src={img1} style={{ height: !isMobile ? '100vh' : '50vh' }} />
+          </motion.div>
+          <motion.div
+            className="introduction_text bg-[#181a19] text-xl z-3 left-0 bottom-0"
+            style={{ height: text1Height, width: text1Width, opacity: text1Opacity, translateX: text1TranslateX }}
+          >
+            {texts['intro-body-1']}
+          </motion.div>
+          <motion.div
+            className="introduction_image-wrapper z-2 top-0 left-0"
+            style={{ width: img2Width, scale: img2Scale, opacity: img2Opacity }}
+          >
+            <img className="introduction_image" src={img2} style={{ height: !isMobile ? '100vh' : '50vh' }} />
+          </motion.div>
+          <motion.div
+            className="introduction_text text-xl right-0 bottom-0 z-1"
+            style={{ height: text2Height, width: text2Width, opacity: text2Opacity, translateY: text2TranslateY, backgroundColor: text2Background }}
+          >
+            {texts['intro-body-2']}
+          </motion.div>
+        </div>
       </div>
     </div>
   )
