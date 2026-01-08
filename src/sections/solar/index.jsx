@@ -1,13 +1,14 @@
 import './.css'
 import { useRef, useState } from 'react'
-import { motion, useMotionValueEvent, useScroll, useTransform } from 'motion/react'
+import { motion, useMotionValueEvent, useScroll } from 'motion/react'
 
-import imgBefore from '../../assets/solar-car-port-edit-DkZ1M-F1.png'
-import imgAfter from '../../assets/solar-car-port-edit-2-oxQSxhRE.png'
+import texts from '../../texts'
+import imgBefore from '../../assets/solar-car-port-before.png'
+import imgAfter from '../../assets/solar-car-port-after.png'
 
 function Solar() {
   const ref = useRef()
-  const { scrollYProgress } = useScroll({ target: ref, offset: ['0 0', '1 1']})
+  const { scrollYProgress } = useScroll({ target: ref, offset: ['1 0', '1 1']})
 
   const [transition, setTransition] = useState(false)
 
@@ -39,7 +40,7 @@ function Solar() {
   }
 
   useMotionValueEvent(scrollYProgress, 'change', (latest) => {
-    setTransition(latest > 1/2)
+    setTransition(latest >= 1)
   })
 
   return (
@@ -47,41 +48,36 @@ function Solar() {
       className="flex flex-col py-[25vw]"
       variants={variants}
       animate={transition ? 'backgroundInactive' : 'backgroundActive'}
-      // style="background-color: rgb(24, 26, 25);"
     >
       <div className="solar_text">
-        In dapibus purus nec nisl hendrerit aliquam. Aenean sit amet leo ut nisi molestie ultrices vel ac est. Donec augue felis, pulvinar a mi at, fringilla blandit enim.
+        {texts['solar-body-1']}
       </div>
-      <div className="solar_image-wrapper" ref={ref}>
+      <div className="solar_image-wrapper">
         <motion.div
           className="absolute z-2 top-0 overflow-hidden"
           style={{ transformOrigin: 'center bottom' }}
           variants={variants}
           animate={ transition ? 'beforeInactive' : 'beforeActive' }
-        // style="transform-origin: center bottom; height: 80vh;"
         >
           <div className="solar_image-container">
-            <img src={imgBefore} style={{ height: 'auto' }} />
+            <img src={imgAfter} style={{ height: 'auto' }} />
           </div>
         </motion.div>
         <div className="absolute z-1 top-0">
           <div className="solar_image-container">
-            <img src={imgAfter} style={{ height: 'auto' }} />
+            <img src={imgBefore} style={{ height: 'auto' }} />
           </div>
         </div>
       </div>
-      <div className="solar_text">
-        Donec posuere ante eget lorem tristique, sed mollis lectus ullamcorper.
-        {/* <span style="opacity: 0.3;">Donec </span>
-        <span style="opacity: 0.3;">posuere </span>
-        <span style="opacity: 0.3;">ante </span>
-        <span style="opacity: 0.3;">eget </span>
-        <span style="opacity: 0.3;">lorem </span>
-        <span style="opacity: 0.3;">tristique, </span>
-        <span style="opacity: 0.3;">sed </span>
-        <span style="opacity: 0.3;">mollis </span>
-        <span style="opacity: 0.3;">lectus </span>
-        <span style="opacity: 0.3;">ullamcorper. </span> */}
+      <div className="solar_text" ref={ref}>
+        {(texts['solar-body-2']).split('').map((char, i) =>
+          <motion.span
+            key={i}
+            animate={transition ? { opacity: 0.3 } : { opacity: 1, transition: { delay: 0.01 * i }}}
+          >
+            {char}
+          </motion.span>
+        )}
       </div>
     </motion.div>
   )

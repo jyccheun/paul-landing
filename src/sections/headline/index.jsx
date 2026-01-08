@@ -3,7 +3,7 @@ import { useRef } from 'react'
 import { useMotionTemplate, useScroll, motion, useTransform } from 'motion/react'
 
 import texts from '../../texts'
-import imgApartment from '../../assets/random-building-4-BXqrP7wt.png'
+import imgApartment from '../../assets/random-building-1.png'
 
 function Headline() {
 
@@ -27,8 +27,14 @@ function Headline() {
         <div className="mx-auto">
           <div className="headline_sub-text">{texts['headline-slogan-1']}</div>
           <div className="headline_main-text">
-            {(texts['headline-slogan-2']).split('').map((c, i) =>
-              <span key={i}>{c}</span>
+            {(texts['headline-slogan-2']).split('').map((char, i) =>
+              <motion.span
+                key={i}
+                initial={{ opacity: 0.3 }}
+                animate={{ opacity: 1, transition: { delay: 0.05 * i }}}
+              >
+                {char}
+              </motion.span>
             )}
           </div>
         </div>

@@ -1,19 +1,16 @@
 import './.css'
 import { useRef } from 'react'
-import { useScroll, motion, useTransform, useMotionValueEvent } from 'motion/react'
-import { useMediaQuery } from 'react-responsive'
+import { useScroll, useTransform } from 'motion/react'
 
 import OutdoorSlide from '../../components/outdoorSlide'
 
 import texts from '../../texts'
-import img1 from '../../assets/building-bipv-vertical-D-SapSNP.png'
-import img2 from '../../assets/building-eifs-vertical-xiQj0Yhf.png'
-import img3 from '../../assets/solar-panel-roof-vertical-CPHZqGgb.png'
-import img4 from '../../assets/heat-pump-vertical-g3A9Uvae.png'
+import img1 from '../../assets/building-bipv-vertical.png'
+import img2 from '../../assets/building-eifs-vertical.png'
+import img3 from '../../assets/solar-panel-roof-vertical.png'
+import img4 from '../../assets/heat-pump-vertical.png'
 
 function Outdoor() {
-  const isMobile = useMediaQuery({ maxWidth: 767 })
-
   const ref = useRef()
   const { scrollYProgress } = useScroll({ target: ref, offset: ['0 0', '1 1']})
 
@@ -58,7 +55,7 @@ function Outdoor() {
   const slide3TranslateY = useTransform(scrollYProgress, animations.slide3.translateY.in, animations.slide3.translateY.out)
 
   return (
-    <div className='bg-[#181a19]' style={{ paddingBottom: !isMobile ? '50vh' : 0 }}>
+    <div>
       <div className="h-[420vh] relative" ref={ref}>
         <OutdoorSlide
           image={img1}

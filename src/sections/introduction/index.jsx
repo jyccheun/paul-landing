@@ -4,8 +4,8 @@ import { useScroll, motion, useTransform } from 'motion/react'
 import { useMediaQuery } from 'react-responsive'
 
 import texts from '../../texts'
-import img1 from '../../assets/random-building-3-BkkwaFFK.png'
-import img2 from '../../assets/building-solar-2-DJW7df3q.png'
+import img1 from '../../assets/random-building-2.png'
+import img2 from '../../assets/building-solar-1.png'
 
 function Introduction() {
   const isMobile = useMediaQuery({ maxWidth: 767 })
@@ -94,7 +94,7 @@ function Introduction() {
   const text2Background = useTransform(scrollYProgress, animations.text2.background.in, animations.text2.background.out)
 
   return (
-    <div className='bg-[#181a19]' style={{ paddingBottom: !isMobile ? '50vh' : 0 }}>
+    <div className='bg-dark' style={{ paddingBottom: !isMobile ? '50vh' : 0 }}>
       <div
         ref={ref}
         className="relative z-10"

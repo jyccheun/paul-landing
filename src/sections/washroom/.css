@@ -1,59 +1,61 @@
 .washroom_wrapper {
-    height: 95vh;
-    position: relative
+  height: 95vh;
+  position: relative
 }
 
 .washroom_wrapper_m {
-    height: 70vh!important;
-    overflow: scroll;
-    justify-content: start!important
+  height: 70vh!important;
+  overflow: scroll;
+  justify-content: start!important
 }
 
 .washroom_wrapper_m::-webkit-scrollbar {
-    display: none
+  display: none
 }
 
 .washroom_carousel {
-    height: 95vh;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    position: relative
+  height: 95vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  position: relative
 }
 
 .washroom_carousel_m {
-    display: flex;
-    flex-direction: row;
-    position: relative;
-    width: 260vw;
-    gap: 5vw;
-    margin: 0 5vw
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  width: 260vw;
+  gap: 5vw;
+  margin: 0 5vw
 }
 
 .washroom_container {
-    position: relative;
-    overflow: hidden
+  position: relative;
+  /* overflow: hidden */
 }
 
 .washroom_container_m {
-    display: flex;
-    width: 80vw;
-    border-radius: .5em
+  display: flex;
+  width: 80vw;
+  border-radius: .5em
 }
 
 .washroom_container img {
-    position: relative;
-    z-index: 1
+  position: relative;
+  z-index: 1
 }
 
 .washroom_container_m img {
-    width: 100%;
-    object-fit: cover
+  width: 100%;
+  object-fit: cover
 }
 
 .washroom_see-more {
-    background-color: #fff;
-    position: absolute;
-    z-index: 10;
-    cursor: pointer
+  background-color: #fff;
+  position: absolute;
+  z-index: 10;
+  cursor: pointer;
+  border-radius: 1.5em;
+  overflow: hidden;
 }
