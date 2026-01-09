@@ -10,7 +10,7 @@ function Headline() {
   const { scrollYProgress } = useScroll({ target: ref, offset: ['0 0', '1 0']})
   const transformBackground = useTransform(scrollYProgress, [0, 1/3], ['100%', '0%'])
   const scrollBackground = useMotionTemplate`linear-gradient(rgba(0, 0, 0, 0), rgb(0, 0, 0) ${transformBackground}, rgb(0, 0, 0))`
-  const transformFooter = useTransform(scrollYProgress, [2/3, 1], [1, 0])
+  const transformFooter = useTransform(scrollYProgress, [2/3, 1], [1, 1/3])
 
   return (
     <div className="h-[200vh] flex flex-col" ref={ref}>
@@ -40,7 +40,7 @@ function Headline() {
       </div>
       <motion.div
         className="headline_footer"
-        style={{ opacity: transformFooter, translateY: transformFooter, scale: transformFooter }}
+        style={{ opacity: transformFooter, scale: transformFooter }}
       >
         {texts['headline-footer-1']}
       </motion.div>

@@ -10,7 +10,7 @@ function Video() {
         <GumletPlayer
           videoID="6960b892ac93fe08565ceb12"
           className="video_container"
-          // autoplay
+          autoplay
           // preload
           muted
           loop
