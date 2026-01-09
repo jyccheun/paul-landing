@@ -50,7 +50,7 @@ function Introduction() {
         out: !isMobile ? ['0vw', '40vw', '100vw'] : ['100vw', '100vw', '100vw'],
       },
       scale: {
-        in: [1/2, 1],
+        in: [3/4, 1],
         out: !isMobile ? [1, 1.2] : [1, 1],
       },
       opacity: {
@@ -105,7 +105,10 @@ function Introduction() {
             className="introduction_image-wrapper z-4 right-0"
             style={{ width: img1Width, scale: img1Scale, opacity: img1Opacity, translateX: img1TranslateX }}
           >
-            <img className="introduction_image" src={img1} style={{ height: !isMobile ? '100vh' : '50vh' }} />
+            <img
+              className="introduction_image" src={img1}
+              style={{ height: !isMobile ? '110vh' : '50vh' }}
+            />
           </motion.div>
           <motion.div
             className="introduction_text bg-[#181a19] text-xl z-3 left-0 bottom-0"
@@ -117,7 +120,7 @@ function Introduction() {
             className="introduction_image-wrapper z-2 top-0 left-0"
             style={{ width: img2Width, scale: img2Scale, opacity: img2Opacity }}
           >
-            <img className="introduction_image" src={img2} style={{ height: !isMobile ? '100vh' : '50vh' }} />
+            <img className="introduction_image" src={img2} style={{ height: !isMobile ? '110vh' : '50vh' }} />
           </motion.div>
           <motion.div
             className="introduction_text text-xl right-0 bottom-0 z-1"
