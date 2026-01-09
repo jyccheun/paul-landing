@@ -8,7 +8,7 @@ function Video() {
     <div className="overflow-hidden flex flex-col items-center pb-[25vh] bg-cool">
       <div className="video_container">
         <GumletPlayer
-          videoID="6960b892ac93fe08565ceb12"
+          videoID="6960b9b9525cbb355622b6c4"
           className="video_container"
           autoplay
           // preload
