@@ -4,9 +4,9 @@
 }
 
 .washroom_wrapper_m {
-  height: 70vh!important;
+  height: auto !important;
   overflow: scroll;
-  justify-content: start!important
+  justify-content: start !important;
 }
 
 .washroom_wrapper_m::-webkit-scrollbar {
@@ -14,7 +14,7 @@
 }
 
 .washroom_carousel {
-  height: 95vh;
+  /* height: 95vh; */
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -38,7 +38,8 @@
 .washroom_container_m {
   display: flex;
   width: 80vw;
-  border-radius: .5em
+  border-radius: .5em;
+  overflow: hidden;
 }
 
 .washroom_container img {
@@ -58,4 +59,5 @@
   cursor: pointer;
   border-radius: 1.5em;
   overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }

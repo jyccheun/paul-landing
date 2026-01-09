@@ -1,6 +1,7 @@
 import './.css'
 import { IoMdAdd } from 'react-icons/io'
 import { motion } from 'motion/react'
+import { useMediaQuery } from 'react-responsive'
 
 import texts from '../../texts'
 import img1 from '../../assets/indoor-washroom-split-1.png'
@@ -8,6 +9,9 @@ import img2 from '../../assets/indoor-washroom-split-2.png'
 import img3 from '../../assets/indoor-washroom-split-3.png'
 
 function Washroom() {
+  const isMobile = useMediaQuery({ maxWidth: 767 })
+  const isTablet = useMediaQuery({ maxWidth: 1224 })
+
   const popupMotion = {
     rest: { height: 48, width: 48 },
     hover: { height: 'auto', width: 'auto', transition: { type: 'tween' }}
@@ -74,85 +78,101 @@ function Washroom() {
   //   </div>
   // </div>
 
-    <div className="pb-[40vh] bg-cool overflow-hidden">
-      <div className="washroom_wrapper">
-        <div className="washroom_carousel">
-          <div className="washroom_container">
+    <div className="pb-[40vh] pt-[20vh] bg-cool overflow-hidden">
+      {isTablet ?
+        <div className="text-xl font-semibold text-white m-[5vw]">
+          {texts['washroom-heading']}
+        </div> : null
+      }
+      <div className={'washroom_wrapper' + (isMobile ? ' washroom_wrapper_m' : '')}>
+        <div className={!isMobile ? 'washroom_carousel' : 'washroom_carousel_m'}>
+          <div className={'washroom_container' + (isMobile ? ' washroom_container_m' : '')}>
             <img src={img1} />
             <motion.div
               className="washroom_see-more"
-              style={{ top: '42%', left: '25%' }}
-              initial="rest"
+              style={{ top: !isMobile ? '42%' : '2.5vw', left: !isMobile ? '25%' : '2.5vw' }}
+              initial={!isMobile ? 'rest' : 'hover'}
               whileHover="hover"
-              animate="rest"
             >
               <motion.div variants={popupMotion}>
-                <div className='h-[48px] w-[48px] flex justify-center items-center absolute top-0 left-0'>
-                  <IoMdAdd size={28} />
-                </div>
+                {!isMobile ?
+                  <div className='h-[48px] w-[48px] flex justify-center items-center absolute top-0 left-0'>
+                    <IoMdAdd size={28} />
+                  </div> : null
+                }
                 <motion.div
-                  className="text-xl w-[262px] p-[16px] pt-[48px]"
+                  className="text-xl p-[16px]"
+                  style={{ width: !isMobile ? 262 : '75vw', paddingTop: !isMobile ? 48 : 16 }}
                   variants={popupTextMotion}
                 >
                   {texts['washroom-item-1-heading']}
-                  <br /><br />
-                  {texts['washroom-item-1-body']}
+                  <div className='mt-[0.5em]'>
+                    {texts['washroom-item-2-body']}
+                  </div>
                 </motion.div>
               </motion.div>
             </motion.div>
           </div>
-          <div className="washroom_container">
+          <div className={'washroom_container' + (isMobile ? ' washroom_container_m' : '')}>
             <img src={img2} />
             <motion.div
               className="washroom_see-more"
-              style={{ bottom: '30%', left: '30%' }}
-              initial="rest"
+              style={{ bottom: '30%', left: !isMobile ? '30%' : '2.5vw' }}
+              initial={!isMobile ? 'rest' : 'hover'}
               whileHover="hover"
-              animate="rest"
             >
               <motion.div variants={popupMotion}>
-                <div className='h-[48px] w-[48px] flex justify-center items-center absolute bottom-0 left-0'>
-                  <IoMdAdd size={28} />
-                </div>
+                {!isMobile ?
+                  <div className='h-[48px] w-[48px] flex justify-center items-center absolute bottom-0 left-0'>
+                    <IoMdAdd size={28} />
+                  </div> : null
+                }
                 <motion.div
-                  className="text-xl w-[262px] p-[16px] pb-[48px]"
+                  className="text-xl p-[16px]"
+                  style={{ width: !isMobile ? 262 : '75vw', paddingBottom: !isMobile ? 48 : 16 }}
                   variants={popupTextMotion}
                 >
                   {texts['washroom-item-2-heading']}
-                  <br /><br />
-                  {texts['washroom-item-2-body']}
+                  <div className='mt-[0.5em]'>
+                    {texts['washroom-item-2-body']}
+                  </div>
                 </motion.div>
               </motion.div>
             </motion.div>
           </div>
-          <div className="washroom_container">
+          <div className={'washroom_container' + (isMobile ? ' washroom_container_m' : '')}>
             <img src={img3} />
             <motion.div
               className="washroom_see-more"
-              style={{ top: '12%', right: '23%' }}
-              initial="rest"
+              style={{ top: !isMobile ? '12%' : '25%', right: !isMobile ? '23%' : '2.5vw' }}
+              initial={!isMobile ? 'rest' : 'hover'}
               whileHover="hover"
-              animate="rest"
             >
               <motion.div variants={popupMotion}>
-                <div className='h-[48px] w-[48px] flex justify-center items-center absolute top-0 right-0'>
-                  <IoMdAdd size={28} />
-                </div>
+                {!isMobile ?
+                  <div className='h-[48px] w-[48px] flex justify-center items-center absolute top-0 right-0'>
+                    <IoMdAdd size={28} />
+                  </div> : null
+                }
                 <motion.div
-                  className="text-xl w-[262px] p-[16px] pt-[48px]"
+                  className="text-xl p-[16px]"
+                  style={{ width: !isMobile ? 262 : '75vw', paddingTop: !isMobile ? 48 : 16 }}
                   variants={popupTextMotion}
                 >
                   {texts['washroom-item-3-heading']}
-                  <br /><br />
-                  {texts['washroom-item-3-body']}
+                  <div className='mt-[0.5em]'>
+                    {texts['washroom-item-3-body']}
+                  </div>
                 </motion.div>
               </motion.div>
             </motion.div>
           </div>
         </div>
-        <div className="absolute top-[5%] left-[18%] text-2xl font-semibold z-5 max-w-[25%]">
-          {texts['washroom-heading']}
-        </div>
+        {!isTablet ?
+          <div className="absolute top-[5%] left-[18%] text-2xl font-semibold z-5 max-w-[25%]">
+            {texts['washroom-heading']}
+          </div> : null
+        }
       </div>
     </div>
   )

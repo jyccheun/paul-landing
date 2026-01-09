@@ -6,7 +6,6 @@ import texts from '../../texts'
 import imgApartment from '../../assets/random-building-1.png'
 
 function Headline() {
-
   const ref = useRef()
   const { scrollYProgress } = useScroll({ target: ref, offset: ['0 0', '1 0']})
   const transformBackground = useTransform(scrollYProgress, [0, 1/3], ['100%', '0%'])

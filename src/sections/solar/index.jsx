@@ -1,6 +1,7 @@
 import './.css'
 import { useRef, useState } from 'react'
 import { motion, useMotionValueEvent, useScroll } from 'motion/react'
+import { useMediaQuery } from 'react-responsive'
 
 import texts from '../../texts'
 import imgBefore from '../../assets/solar-car-port-before.png'
@@ -9,6 +10,8 @@ import imgAfter from '../../assets/solar-car-port-after.png'
 function Solar() {
   const ref = useRef()
   const { scrollYProgress } = useScroll({ target: ref, offset: ['1 0', '1 1']})
+
+  const isMobile = useMediaQuery({ maxWidth: 767 })
 
   const [transition, setTransition] = useState(false)
 
@@ -60,12 +63,12 @@ function Solar() {
           animate={ transition ? 'beforeInactive' : 'beforeActive' }
         >
           <div className="solar_image-container">
-            <img src={imgAfter} style={{ height: 'auto' }} />
+            <img src={imgAfter} style={{ height: !isMobile ? 'auto' : '100%' }} />
           </div>
         </motion.div>
         <div className="absolute z-1 top-0">
           <div className="solar_image-container">
-            <img src={imgBefore} style={{ height: 'auto' }} />
+            <img src={imgBefore} style={{ height: !isMobile ? 'auto' : '100%' }} />
           </div>
         </div>
       </div>
