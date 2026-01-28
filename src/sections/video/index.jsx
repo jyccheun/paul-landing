@@ -18,7 +18,7 @@ function Video() {
           enabled_player
         /> */}
         <video
-          src={'https://daghvm4jxqkzu.cloudfront.net/VP34+EIFS+Sep+24+DJI+0667+%5Bo1dcBgqcj2E%5D.mkv'}
+          src={'https://d2lrpxs7z913k3.cloudfront.net/VP34+EIFS+Sep+24+DJI+0667+%5Bo1dcBgqcj2E%5D.mp4'}
           autoPlay
           muted
           loop
