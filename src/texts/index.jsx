@@ -1,5 +1,5 @@
 export default {
-  'company-name': 'Company Name',
+  'company-name': 'Cortx Consulting Inc.',
 
   'headline-slogan-1': 'Modern Retrofit Solutions',
   'headline-slogan-2': 'Upgrades of the Future',
@@ -34,6 +34,7 @@ export default {
   'washroom-item-3-body': 'In dapibus purus nec nisl hendrerit aliquam. Aenean sit amet leo ut nisi molestie ultrices vel ac est. Donec augue felis, pulvinar a mi at, fringilla blandit enim.',
 
   'contact': 'Contact Us',
-  'contact-email': 'xxxxxxxx@xxx.com',
-  'contact-number': 'xxx xxx xxxx',
+  'contact-email': 'admin@cortxconsulting.com',
+  'contact-number': '(647)513-7022',
+  'contact-address': '200-185 Carlton St, Winnipeg MB R3C 3H7',
 }
