@@ -1,4 +1,5 @@
 import { ReactLenis } from './utils/lenis'
+import { Routes, Route } from 'react-router'
 
 import Header from './sections/header'
 import Headline from './sections/headline'
